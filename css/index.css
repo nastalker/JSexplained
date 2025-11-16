@@ -1,0 +1,143 @@
+ body{
+      margin:0;
+      font-family:Poppins, sans-serif;
+      background:#000;
+      color:#e6e6e6;
+      overflow-x:hidden;
+      min-height:100vh;
+    }
+
+    header{
+      padding:28px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:#030303;
+      border-bottom:1px solid #0f0f0f;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#00eaff;
+    }
+
+    nav a{
+      text-decoration:none;
+      margin-left:24px;
+      color:#b3b3b3;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#00eaff;
+    }
+
+    .hero{
+      text-align:center;
+      padding:90px 20px 60px;
+    }
+
+    .hero h1{
+      font-size:50px;
+      background:linear-gradient(90deg,#00eaff,#00ff9d);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin:0;
+    }
+
+    .hero p{
+      color:#bbb;
+      max-width:700px;
+      margin:20px auto 0;
+      line-height:1.7;
+      font-size:18px;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:30px;
+      margin-top:80px;
+      color:#00eaff;
+      letter-spacing:1px;
+    }
+
+    .services{
+      margin-top:40px;
+      padding:0 40px 80px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:35px;
+    }
+
+    .card{
+      background:#0b0b0b;
+      padding:30px 22px;
+      border-radius:14px;
+      border:1px solid #111;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 28px rgba(0,234,255,0.15);
+      border-color:#00eaff;
+    }
+
+    .card h3{
+      color:#00eaff;
+      margin-bottom:10px;
+      font-size:22px;
+    }
+
+    .card p{
+      color:#cfcfcf;
+      line-height:1.6;
+      font-size:15px;
+    }
+
+    .cta{
+      text-align:center;
+      padding:60px 20px;
+      background:#020202;
+      border-top:1px solid #0f0f0f;
+      border-bottom:1px solid #0f0f0f;
+      margin-top:60px;
+    }
+
+    .cta h2{
+      font-size:34px;
+      margin:0;
+      background:linear-gradient(90deg,#00ff9d,#00eaff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .cta button{
+      margin-top:24px;
+      padding:14px 30px;
+      background:#00eaff;
+      border:0;
+      border-radius:12px;
+      font-size:16px;
+      font-weight:600;
+      color:#001317;
+      cursor:pointer;
+      box-shadow:0 0 22px rgba(0,234,255,0.4);
+      transition:0.3s;
+    }
+
+    .cta button:hover{
+      transform:translateY(-4px);
+      box-shadow:0 0 32px rgba(0,234,255,0.7);
+    }
+
+    footer{
+      text-align:center;
+      padding:20px 0;
+      color:#666;
+      background:#030303;
+      border-top:1px solid #0f0f0f;
+      margin-top:60px;
+    }

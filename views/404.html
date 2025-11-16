@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>404 — Page Not Found · Apilox</title>
+  <style>
+    :root{
+      --bg:#000;
+      --card:#070707;
+      --muted:#9aa6b2;
+      --accent:#00eaff;
+      --accent2:#00ff9d;
+      --glass: rgba(255,255,255,0.02);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, Poppins, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: radial-gradient(800px 400px at 10% 10%, rgba(0,234,255,0.03), transparent), #000;
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 20px;
+    }
+
+    .panel{
+      width:min(980px,100%);
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      align-items:center;
+      padding:28px;
+      border-radius:18px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+    }
+
+    @media (max-width:900px){
+      .panel{grid-template-columns:1fr; padding:18px}
+    }
+
+    .left{
+      padding:8px 12px;
+    }
+
+    .code{
+      font-size:120px;
+      line-height:1;
+      font-weight:800;
+      letter-spacing:-6px;
+      margin:0;
+      color:transparent;
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
+      -webkit-background-clip:text;
+      background-clip:text;
+    }
+
+    h2{margin:6px 0 10px;font-size:22px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:12px 18px;border-radius:12px;border:0;font-weight:700;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#001217;box-shadow:0 12px 30px rgba(0,234,255,0.12)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+
+    .hint{margin-top:12px;font-size:13px;color:var(--muted)}
+
+    /* right column: card */
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+      padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);
+      height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;text-align:center
+    }
+
+    .astro{
+      width:180px;height:180px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(0,234,255,0.06),rgba(0,255,157,0.04));border:1px solid rgba(255,255,255,0.02)
+    }
+
+    .mini{font-size:13px;color:var(--muted)}
+
+    /* subtle starfield */
+    .stars{position:fixed;inset:0;pointer-events:none;z-index:0}
+    .stars svg{width:100%;height:100%}
+
+    /* search */
+    .search{
+      margin-top:16px;display:flex;gap:8px;align-items:center
+    }
+    .search input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#e8eef8;outline:none}
+
+    .countdown{margin-top:10px;font-size:13px;color:var(--muted)}
+
+    /* small responsive tweaks */
+    @media (max-width:480px){.code{font-size:86px}}
+  </style>
+</head>
+<body>
+
+  <div class="stars" aria-hidden="true">
+    <svg preserveAspectRatio="none" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#ffffff" opacity="0.08">
+        <circle cx="50" cy="80" r="1.6"/>
+        <circle cx="120" cy="40" r="1.2"/>
+        <circle cx="260" cy="120" r="1.8"/>
+        <circle cx="340" cy="20" r="1.4"/>
+        <circle cx="480" cy="90" r="1.1"/>
+        <circle cx="640" cy="40" r="1.4"/>
+        <circle cx="720" cy="130" r="1.8"/>
+        <circle cx="550" cy="200" r="1.6"/>
+        <circle cx="200" cy="260" r="1.2"/>
+        <circle cx="430" cy="320" r="1.3"/>
+      </g>
+    </svg>
+  </div>
+
+  <main class="panel" role="main" aria-labelledby="page-title">
+    <section class="left">
+      <p class="code" aria-hidden="true">404</p>
+      <h2 id="page-title">Page not found</h2>
+      <p class="lead">Sorry — the page you were looking for doesn't exist or has been moved. Try returning home or search for what you need.</p>
+
+      <div class="actions" role="group" aria-label="Primary actions">
+        <button class="btn btn-primary" id="goHome">Go to Home</button>
+        <button class="btn btn-ghost" id="contactSupport">Contact Support</button>
+      </div>
+
+      <div class="search" aria-label="Search site">
+        <input id="searchInput" placeholder="Search the Apilox app or docs..." aria-label="Search" />
+        <button class="btn btn-ghost" id="searchBtn">Search</button>
+      </div>
+
+      <div class="hint">You will be redirected to the homepage in <span id="count">10</span> seconds. <a href="#" id="cancelLink">Cancel</a></div>
+
+    </section>
+
+    <aside class="card" aria-hidden="false">
+      <div class="astro" role="img" aria-label="Astronaut illustration">
+        <!-- small inline SVG astronaut -->
+        <svg width="110" height="110" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g fill="none" fill-rule="evenodd">
+            <circle cx="32" cy="28" r="10" fill="#001217" stroke="#00eaff" stroke-width="1.6"/>
+            <path d="M22 46c3-4 18-4 21 0v2H22v-2z" fill="#071822" stroke="#00eaff" stroke-width="0.8"/>
+            <path d="M18 14c0 0 4-4 14-4s14 4 14 4" stroke="#00eaff" stroke-width="1.2" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="mini">Apilox — Instant pharmacy finder • Telemedicine • APBIM</div>
+      <div class="mini">Need help? email <a href="mailto:support@apilox.health" style="color:var(--accent)">support@apilox.health</a></div>
+    </aside>
+
+  </main>
+
+  <script>
+    // Countdown redirect with simple controls
+    (function(){
+      let counter = 10;
+      const el = document.getElementById('count');
+      const goHome = document.getElementById('goHome');
+      const cancelLink = document.getElementById('cancelLink');
+      const contact = document.getElementById('contactSupport');
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+      let timer = null;
+
+      function startTimer(){
+        timer = setInterval(()=>{
+          counter -= 1;
+          if(el) el.textContent = counter;
+          if(counter<=0){
+            clearInterval(timer);
+            window.location.href = '/'; // change to your actual homepage
+          }
+        },1000);
+      }
+
+      startTimer();
+
+      cancelLink.addEventListener('click', function(e){
+        e.preventDefault();
+        if(timer){clearInterval(timer);timer=null;el.textContent='canceled';}
+      });
+
+      goHome.addEventListener('click', ()=>{
+        window.location.href = '/';
+      });
+
+      contact.addEventListener('click', ()=>{
+        window.location.href = 'mailto:support@apilox.health?subject=404%20help';
+      });
+
+      searchBtn.addEventListener('click', ()=>{
+        const q = searchInput.value.trim();
+        if(!q) return searchInput.focus();
+        // example: forward to search results (change path as needed)
+        window.location.href = '/search?q='+encodeURIComponent(q);
+      });
+
+      // keyboard accessibility: Enter triggers search when focus is in input
+      searchInput.addEventListener('keydown', function(e){ if(e.key==='Enter'){ searchBtn.click(); }});
+
+      // small floating star animation
+      const svg = document.querySelector('.stars svg');
+      if(svg){
+        const circles = svg.querySelectorAll('circle');
+        circles.forEach((c,i)=>{
+          const dur = 3000 + Math.random()*4000;
+          const amp = 0.6 + Math.random()*0.8;
+          setInterval(()=>{
+            c.style.opacity = 0.06 + Math.random()*0.12;
+            c.setAttribute('r', 1 + Math.random()*1.8);
+          }, dur);
+        });
+      }
+
+    })();
+  </script>
+</body>
+</html>

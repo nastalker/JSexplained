@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apilox • Black Theme Experience</title>
+  <style>
+    body{
+      margin:0;
+      font-family: Poppins, sans-serif;
+      background:#000;
+      color:#e6e6e6;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    header{
+      padding:28px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid #111;
+      background:#020202;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#00eaff;
+      letter-spacing:1px;
+    }
+
+    nav a{
+      color:#b3b3b3;
+      margin-left:24px;
+      text-decoration:none;
+      font-weight:500;
+      transition:0.3s;
+    }
+    nav a:hover{
+      color:#00eaff;
+    }
+
+    .hero{
+      padding:100px 20px;
+      text-align:center;
+    }
+    .hero h1{
+      font-size:54px;
+      font-weight:700;
+      margin:0;
+      background:linear-gradient(90deg,#00eaff,#00ff9d);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .hero p{
+      margin-top:14px;
+      font-size:18px;
+      color:#cccccc;
+    }
+
+    .btn{
+      padding:14px 28px;
+      background:#00eaff;
+      border:0;
+      border-radius:12px;
+      font-size:16px;
+      color:#001216;
+      cursor:pointer;
+      margin-top:30px;
+      font-weight:600;
+      transition:0.25s;
+      box-shadow:0 0 22px rgba(0,234,255,0.4);
+    }
+    .btn:hover{
+      transform:translateY(-4px);
+      box-shadow:0 0 32px rgba(0,234,255,0.65);
+    }
+
+    .features{
+      margin-top:80px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      gap:40px;
+      padding:0 40px 80px;
+    }
+
+    .box{
+      background:#0a0a0a;
+      border:1px solid #111;
+      padding:24px;
+      border-radius:14px;
+      transition:0.3s;
+      text-align:center;
+    }
+
+    .box:hover{
+      transform:translateY(-8px);
+      box-shadow:0 8px 28px rgba(0,0,0,0.65);
+      border-color:#00eaff;
+    }
+
+    .box h3{
+      color:#00eaff;
+      margin-bottom:10px;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px 0;
+      color:#666;
+      background:#020202;
+      border-top:1px solid #111;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Apilox</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Pharmacy Network</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>The Future of Healthcare Access</h1>
+    <p>Apilox connects patients, pharmacies, and doctors in a seamless digital ecosystem — now in a clean black premium theme.</p>
+    <button class="btn">Get Started</button>
+  </section>
+
+  <section class="features">
+    <div class="box">
+      <h3>Centralized Pharmacy Network</h3>
+      <p>Instantly locate medicines, check availability, and order with ease across Tanzania.</p>
+    </div>
+
+    <div class="box">
+      <h3>Telemedicine Access</h3>
+      <p>Connect with certified doctors anytime, anywhere — no more long-distance travel.</p>
+    </div>
+
+    <div class="box">
+      <h3>Smart AI Monitoring</h3>
+      <p>Track symptoms, medication adherence, and health progress with Apilox AI.</p>
+    </div>
+
+    <div class="box">
+      <h3>APBIM Credit Support</h3>
+      <p>Get up to 30 days prescription credit for chronic medications, terms apply.</p>
+    </div>
+  </section>
+
+  <footer>
+   Made with 💚 by Apilox Softwares Inc 
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "05tut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "author": "Nastalker",
+  "license": "ISC",
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

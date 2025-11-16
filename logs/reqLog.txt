@@ -1,0 +1,7 @@
+2025-November-16	13:04:01	2839e452-9692-4599-9160-9eaff1aa1717	/views/index.html	GET
+2025-November-16	13:04:01	76168b7f-095e-4fa3-b0f5-5d81d27e6602	/favicon.ico	GET
+2025-November-16	13:04:11	eebceb9f-8441-44de-aa3a-7613bf03daa4	/	GET
+2025-November-16	13:28:26	61a40e50-4599-4c8e-a3a3-038a3133d091	/404	GET
+2025-November-16	13:28:33	ee82b500-57f0-4f7b-a0a4-a821fe1c1b96	/index	GET
+2025-November-16	13:28:43	055fe3f7-2646-4a23-9cdd-2c397c59b3fd	/new-page	GET
+2025-November-16	13:28:43	75c40a3b-d9fd-4bf4-8f82-57b48957cefb	/css/style.css	GET

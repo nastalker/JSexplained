@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stylish Single-File Web Page</title>
+  <meta name="description" content="A single-file HTML page with modern styling, responsive layout and small interactions." />
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="wrap" role="main">
+    <!-- LEFT: Profile / Controls -->
+    <aside class="profile-card" aria-labelledby="profile-title">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="avatar" aria-hidden="true">YL</div>
+        <div>
+          <h2 id="profile-title" class="name">Yohana Laurent</h2>
+          <div class="role">Founder • Product • PharmTech</div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px" class="search" role="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"></path><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6"></circle></svg>
+        <input type="search" placeholder="Search features, docs..." aria-label="Search" id="q" />
+      </div>
+
+      <div class="meta">
+        <div class="pill">Active • 2h</div>
+        <div class="pill">Team: Apilox</div>
+      </div>
+
+      <div style="margin-top:18px">
+        <div style="display:flex;gap:10px">
+          <button class="btn-primary" id="openDemo">Open demo</button>
+          <button class="btn-ghost" id="copyHTML">Copy HTML</button>
+        </div>
+      </div>
+
+      <div class="note">Tip: Hover cards for subtle lift. Try the "Open demo" button to show a small modal demo.</div>
+    </aside>
+
+    <!-- RIGHT: Main content -->
+    <section class="main" aria-labelledby="main-heading">
+      <header>
+        <h1 id="main-heading">Dashboard — Creative Playground</h1>
+        <p class="lead">A modern single-file example showing layout, animated micro-interactions and accessible controls. Use it as a starter for portfolios, project landing pages, or small apps.</p>
+      </header>
+
+      <div class="stats" aria-hidden="true">
+        <div class="stat">
+          <div class="num">1,204</div>
+          <div class="lbl">Active users</div>
+        </div>
+        <div class="stat">
+          <div class="num">$12.6k</div>
+          <div class="lbl">Monthly revenue</div>
+        </div>
+        <div class="stat">
+          <div class="num">86%</div>
+          <div class="lbl">Adherence</div>
+        </div>
+      </div>
+
+      <div class="features" role="list">
+        <article class="feature" role="listitem">
+          <div class="icon grad1">A</div>
+          <div>
+            <h3>AI Triage</h3>
+            <p>Smart symptom intake that suggests the right specialist, reduces unnecessary visits, and improves triage.</p>
+          </div>
+        </article>
+
+        <article class="feature" role="listitem">
+          <div class="icon grad2">P</div>
+          <div>
+            <h3>Pharmacy Network</h3>
+            <p>Centralized inventory across partner pharmacies with instant availability and delivery options.</p>
+          </div>
+        </article>
+
+        <article class="feature" role="listitem">
+          <div class="icon grad1">B</div>
+          <div>
+            <h3>Benefit Management</h3>
+            <p>Credit-based refill system to help chronic patients access medicines responsibly.</p>
+          </div>
+        </article>
+
+        <article class="feature" role="listitem">
+          <div class="icon grad2">S</div>
+          <div>
+            <h3>Secure Docs</h3>
+            <p>Encrypted prescriptions and audit logs for safer medication dispensing and record keeping.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="actions" aria-hidden="true">
+        <button class="btn-primary" id="primaryAction">Create report</button>
+        <button class="btn-ghost" id="secondaryAction">Export CSV</button>
+      </div>
+
+      <footer>
+        <p class="note">Made with care • Single-file demo • Responsive • Accessible</p>
+      </footer>
+    </section>
+
+  </main>
+
+  <script>
+    // Small interactivity: demo modal + copy page HTML
+    function openDemo(){
+      const demo = document.createElement('div');
+      demo.style.position='fixed'; demo.style.inset=0; demo.style.display='flex'; demo.style.alignItems='center'; demo.style.justifyContent='center';
+      demo.style.background='rgba(2,6,23,0.6)'; demo.style.zIndex=9999;
+      demo.innerHTML = `
+        <div style="width:min(720px,94%);background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:22px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);color:#e6eef8;">
+          <h2 style="margin-top:0">Interactive Demo</h2>
+          <p style="color:var(--muted)">This is a small demo modal. Click outside or press Escape to close.</p>
+          <pre style="background:#071022;padding:12px;border-radius:8px;overflow:auto;color:#9fd6ff;">Example: generate-report --period=30d --format=pdf</pre>
+          <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:12px">
+            <button id="closeDemo" style="padding:8px 12px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)">Close</button>
+          </div>
+        </div>
+      `;
+
+      demo.addEventListener('click', (e)=>{ if(e.target===demo) demo.remove(); });
+      document.body.appendChild(demo);
+      document.getElementById('closeDemo').addEventListener('click', ()=>demo.remove());
+      document.addEventListener('keydown', function esc(k){ if(k.key==='Escape'){ demo.remove(); document.removeEventListener('keydown',esc);} });
+    }
+
+    document.getElementById('openDemo').addEventListener('click', openDemo);
+
+    document.getElementById('copyHTML').addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText(document.documentElement.outerHTML);
+        alert('Page HTML copied to clipboard — paste into a file (index.html) to save.');
+      }catch(e){
+        alert('Copy failed (browser may block clipboard). You can "View Source" and copy manually.');
+      }
+    });
+
+    document.getElementById('primaryAction').addEventListener('click', ()=>{
+      alert('Report generation simulated. (This is a demo button.)');
+    });
+
+    document.getElementById('secondaryAction').addEventListener('click', ()=>{
+      const csv = 'name,metric\nActive users,1204\nRevenue,12600';
+      const blob = new Blob([csv],{type:'text/csv'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href=url; a.download='report.csv'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    // small accessibility: focus first interactive element
+    document.getElementById('q').focus();
+  </script>
+</body>
+</html>
